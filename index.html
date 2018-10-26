@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Romanian Overseas Polling Stations</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .jumbotron {
+            height: 50%;
+        }
+
+        .newcontainer {
+            position: absolute;
+            width: 100%;
+            padding-top: -50px;
+        }
+
+        button {
+            background-color: #3881f7;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #2469d8;
+            Color: white;
+        }
+
+        .btn:visited {
+            color: white;
+            Background-color: black;
+        }
+
+        .btn:focus {
+            color: white;
+            Background-color: black;
+        }
+
+        .footer {
+            background-color: #efefef;
+            height: 7vh;
+            position: fixed;
+            bottom: 0px;
+            margin: 0 auto;
+            Padding-top: 2.5vh;
+            min-width: 100%;
+        }
+
+        #results {
+            
+            font-size: 15px;
+        }
+
+        .allah {
+            background-color: lightgray;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            background-color: #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .form-control {
+            color: white;
+            background-color: #5a92ed;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .stylish-input-group .input-group-addon {
+            background: white !important;
+        }
+
+        .stylish-input-group .form-control {
+            border-right: 0;
+            box-shadow: 0 0 0;
+            border-color: #ccc;
+        }
+
+        .stylish-input-group button {
+            border: 0;
+            background: transparent;
+        }
+        
+
+    </style>
+    <script>
+        //Reference: https://jsfiddle.net/fwv18zo1/
+        window.onload = function() {
+            yourFunction();
+        };
+
+        function yourFunction() {
+            var $select1 = $('#select1'),
+                $select2 = $('#select2'),
+                $select3 = $('#select3'),
+                $div = $('#results'),
+                $options = $select2.find('option');
+            $options2 = $select3.find('option');
+
+            $select1.on('change', function() {
+                $select2.html($options.filter('[value="' + this.value + '"]'));
+                var soice = $('#select2').find(':selected').html();
+                var selection = $options2.filter('[value="' + soice + '"]');
+                var prepHTML = selection[0].innerHTML + " <a href=\"https://www.google.com/maps/dir/?api=1&destination=" + selection[0].innerHTML.replace(" ", "%20") + "\"  target=\"_blank\"><br><br><button class=\"btn\">Google Maps Directions</button></a>";
+                $('#results').html(prepHTML);
+            }).trigger('change');
+            $('#select2').on('change', function() {
+                var soice = $('#select2').find(':selected').html();
+                var selection = $options2.filter('[value="' + soice + '"]');
+                var prepHTML = selection[0].innerHTML + " <a href=\"https://www.google.com/maps/dir/?api=1&destination=" + selection[0].innerHTML.replace(" ", "%20") + "\"  target=\"_blank\"><br><br><button class=\"btn\">Google Maps Directions</button></a>";
+                $('#results').html(prepHTML);
+            }).trigger('change');
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <div class="noice">
+            <img height="100px" width="150px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/1200px-Flag_of_Romania.svg.png">
+            <h1>Romanian Polling Stations</h1>
+            <p>Pick your country and city from the dropdown boxes below.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <select class="form-control" name="select1" id="select1">
+            <option value="Afganistan">Afganistan</option>
+            <option value="Africa de Sud">Africa de Sud</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Angola">Angola</option>
+            <option value="Arabia Saudită">Arabia Saudită</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaidjan">Azerbaidjan</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgia">Belgia</option>
+            <option value="Bosnia și Herțegovina">Bosnia și Herțegovina</option>
+            <option value="Brazilia">Brazilia</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Canada">Canada</option>
+            <option value="Columbia">Columbia</option>
+            <option value="Republica Populară Democrată Coreeană">Republica Populară Democrată Coreeană</option>
+            <option value="Coreea de Sud">Coreea de Sud</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Cipru">Cipru</option>
+            <option value="Croația">Croația</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Danemarca">Danemarca</option>
+            <option value="Egipt">Egipt</option>
+            <option value="Elveția">Elveția</option>
+            <option value="Emiratele Arabe">Emiratele Arabe Unite</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Etiopia">Etiopia</option>
+            <option value="Filipine">Filipine</option>
+            <option value="Finlanda">Finlanda</option>
+            <option value="Franța">Franța</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germania">Germania</option>
+            <option value="Grecia">Grecia</option>
+            <option value="Iordania">Iordania</option>
+            <option value="India">India</option>
+            <option value="Republica Indonezia">Republica Indonezia</option>
+            <option value="Irlanda">Irlanda</option>
+            <option value="Israel">Israel</option>
+            <option value="Italia">Italia</option>
+            <option value="Irak">Irak</option>
+            <option value="Iran">Iran</option>
+            <option value="Japonia">Japonia</option>
+            <option value="Kazahstan">Kazahstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Liban">Liban</option>
+            <option value="Lituania">Lituania</option>
+            <option value="Luxemburg">Luxemburg</option>
+            <option value="Macedonia">Macedonia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maroc">Maroc</option>
+            <option value="Mexic">Mexic</option>
+            <option value="Republica Moldova">Republica Moldova</option>
+            <option value="Muntenegru">Muntenegru</option>
+            <option value="Norvegia">Norvegia</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Olanda">Olanda</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palestina">Palestina</option>
+            <option value="Peru">Peru</option>
+            <option value="Polonia">Polonia</option>
+            <option value="Portugalia">Portugalia</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Regatul Unit al Marii Britanii şi">Regatul Unit al Marii Britanii şi</option>
+            <option value="Federaţia Rusă">Federaţia Rusă</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Siria">Siria</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Slovacia">Slovacia</option>
+            <option value="Spania">Spania</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="SUA">SUA</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suedia">Suedia</option>
+            <option value="Thailanda">Thailanda</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turcia">Turcia</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Ucraina">Ucraina</option>
+            <option value="Ungaria">Ungaria</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+        </select><select class="form-control" name="select2" id="select2">
+            <option value="Afganistan">Kabul</option>
+            <option value="Africa de Sud">Pretoria</option>
+            <option value="Africa de Sud">Cape Town</option>
+            <option value="Albania">Tirana</option>
+            <option value="Algeria">Alger</option>
+            <option value="Angola">Luanda</option>
+            <option value="Arabia Saudită">Riad</option>
+            <option value="Argentina">Buenos Aires</option>
+            <option value="Armenia">Erevan</option>
+            <option value="Australia">Canberra</option>
+            <option value="Australia">Sydney</option>
+            <option value="Austria">Viena</option>
+            <option value="Azerbaidjan">Baku</option>
+            <option value="Belarus">Minsk</option>
+            <option value="Belgia">Bruxelles</option>
+            <option value="Bosnia și Herțegovina">Sarajevo</option>
+            <option value="Brazilia">Brasilia</option>
+            <option value="Brazilia">Rio de Janeiro</option>
+            <option value="Bulgaria">Sofia</option>
+            <option value="Canada">Ottawa</option>
+            <option value="Canada">Montreal</option>
+            <option value="Canada">Toronto</option>
+            <option value="Canada">Vancouver</option>
+            <option value="Columbia">Praga</option>
+            <option value="Columbia">Bogota</option>
+            <option value="Republica Populară Democrată Coreeană">Phenian</option>
+            <option value="Coreea de Sud">Seoul</option>
+            <option value="Chile">Santiago de Chile</option>
+            <option value="China">Beijing</option>
+            <option value="China">Hong Kong</option>
+            <option value="China">Shanghai</option>
+            <option value="Cipru">Nicosia</option>
+            <option value="Croația">Zagreb</option>
+            <option value="Cuba">Havana</option>
+            <option value="Danemarca">Copenhaga</option>
+            <option value="Danemarca">Århus</option>
+            <option value="Egipt">Cairo</option>
+            <option value="Elveția">Berna</option>
+            <option value="Elveția">Geneva</option>
+            <option value="Emiratele Arabe">Abu Dhabi</option>
+            <option value="Emiratele Arabe">Dubai</option>
+            <option value="Estonia">Tallin</option>
+            <option value="Etiopia">Addis Abeba</option>
+            <option value="Filipine">Manila</option>
+            <option value="Finlanda">Helsinki</option>
+            <option value="Franța">Paris</option>
+            <option value="Franța">Lyon</option>
+            <option value="Franța">Marsilia</option>
+            <option value="Franța">Strasbourg</option>
+            <option value="Georgia">Tbilisi</option>
+            <option value="Germania">Berlin</option>
+            <option value="Germania">Bonn</option>
+            <option value="Germania">Munchen</option>
+            <option value="Germania">Stuttgart</option>
+            <option value="Grecia">Atena</option>
+            <option value="Grecia">Salonic</option>
+            <option value="Iordania">Amman</option>
+            <option value="India">New Delhi</option>
+            <option value="Republica Indonezia">Jakarta</option>
+            <option value="Irlanda">Dublin</option>
+            <option value="Israel">Tel Aviv 1</option>
+            <option value="Israel">Tel Aviv 2</option>
+            <option value="Italia">Roma</option>
+            <option value="Italia">Catania</option>
+            <option value="Italia">Torino</option>
+            <option value="Italia">Trieste</option>
+            <option value="Italia">Veneția</option>
+            <option value="Italia">Milano</option>
+            <option value="Italia">Bologna</option>
+            <option value="Irak">Bagdad</option>
+            <option value="Irak">Erbil</option>
+            <option value="Iran">Teheran</option>
+            <option value="Japonia">Tokyo</option>
+            <option value="Kazahstan">Astana</option>
+            <option value="Kenya">Nairobi</option>
+            <option value="Kuwait">Kuwait City</option>
+            <option value="Liban">Baabda</option>
+            <option value="Lituania">Vilnius</option>
+            <option value="Luxemburg">Luxemburg</option>
+            <option value="Macedonia">Skopje</option>
+            <option value="Malaysia">Kuala Lumpur</option>
+            <option value="Maroc">Rabat</option>
+            <option value="Mexic">Ciudad de Mexico</option>
+            <option value="Republica Moldova">Chișinău</option>
+            <option value="Republica Moldova">Bălți</option>
+            <option value="Republica Moldova">Cahul</option>
+            <option value="Republica Moldova">Ungheni</option>
+            <option value="Muntenegru">Podgorita</option>
+            <option value="Norvegia">Oslo</option>
+            <option value="Nigeria">Abuja</option>
+            <option value="Olanda">Haga</option>
+            <option value="Pakistan">Islamabad</option>
+            <option value="Palestina">Ramallah</option>
+            <option value="Peru">Lima</option>
+            <option value="Polonia">Varșovia</option>
+            <option value="Portugalia">Lisabona</option>
+            <option value="Qatar">Doha</option>
+            <option value="Regatul Unit al Marii Britanii şi">Londra</option>
+            <option value="Regatul Unit al Marii Britanii şi">Edinburgh</option>
+            <option value="Federaţia Rusă">Moscova</option>
+            <option value="Federaţia Rusă">Rostov pe Don</option>
+            <option value="Federaţia Rusă">Sankt Petersburg</option>
+            <option value="Senegal">Dakar</option>
+            <option value="Serbia">Belgrad</option>
+            <option value="Serbia">Vârșeț</option>
+            <option value="Serbia">Zajecar</option>
+            <option value="Serbia">Priștina</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Siria">Damasc</option>
+            <option value="Slovenia">Ljubliana</option>
+            <option value="Slovacia">Bratislava</option>
+            <option value="Spania">Madrid</option>
+            <option value="Spania">Barcelona</option>
+            <option value="Spania">Bilbao</option>
+            <option value="Spania">Sevilla</option>
+            <option value="Spania">Castellon de la Plana 1</option>
+            <option value="Spania">Castellon de la Plana 2</option>
+            <option value="Spania">Ciudad Real</option>
+            <option value="Spania">Zaragoza</option>
+            <option value="Spania">Almeria</option>
+            <option value="Sri Lanka">Colombo</option>
+            <option value="SUA">District of Columbia,Washington</option>
+            <option value="SUA">California, Los Angeles</option>
+            <option value="SUA">New York, New York</option>
+            <option value="SUA">Ilinois, Chicago 1</option>
+            <option value="Sudan">Khartoum</option>
+            <option value="Suedia">Stockholm</option>
+            <option value="Thailanda">Bangkok</option>
+            <option value="Tunisia">Tunis</option>
+            <option value="Turcia">Ankara</option>
+            <option value="Turcia">Izmir</option>
+            <option value="Turcia">Istanbul</option>
+            <option value="Turkmenistan">Ashgabat</option>
+            <option value="Ucraina">Kiev</option>
+            <option value="Ucraina">Cernăuţi</option>
+            <option value="Ucraina">Odesa</option>
+            <option value="Ucraina">Solotvino</option>
+            <option value="Ungaria">Budapesta</option>
+            <option value="Ungaria">Szeged</option>
+            <option value="Ungaria">Gyula</option>
+            <option value="Uruguay">Montevideo</option>
+            <option value="Uzbekistan">Tașkent</option>
+            <option value="Vietnam">Hanoi</option>
+            <option value="Zimbabwe">Harare</option>
+        </select><select class="form-control" style="visibility: hidden; height:1.5vh;" name="select3" id="select3">
+            <option value="Kabul">Baza hotelieră militarizată Green Village, Jalalabad Road</option>
+            <option value="Pretoria">Strada Justice Mahomed nr. 877, Brooklyn, Pretoria 0181</option>
+            <option value="Cape Town">Helderberg House, 24 Highwick Drive, Kenilworth, Cape Town 7708</option>
+            <option value="Tirana">Strada Pandeli Evangjeli, nr.15</option>
+            <option value="Alger">24, Rue Arezki Abri , Hydra, 16035</option>
+            <option value="Luanda">Rua Ramalho Ortigao nr.30</option>
+            <option value="Riad">King Fahad Qarter, Amin al Rehany Street, Villa no.8,Riyadh, 11693, PO BOX 94319</option>
+            <option value="Buenos Aires">Calle Arroyo 962-970, C1007AAD</option>
+            <option value="Erevan">Str. Barbusse, nr.15, cartierul Arabkir, Erevan</option>
+            <option value="Canberra">4 Dalman Crescent O Malley, 2606</option>
+            <option value="Sydney">Ground Floor/83 York Street. Suite 4</option>
+            <option value="Viena">Prinz Eugenstrasse 60, 1040 Viena</option>
+            <option value="Viena">Prinz Eugenstrasse 60, 1040 Viena</option>
+            <option value="Viena">Theresianumgasse 25, 1040 Viena</option>
+            <option value="Viena">Argentinierstrasse 39, 1040 Viena</option>
+            <option value="Viena">Argentinierstrasse 39, 1040 Viena</option>
+            <option value="Viena">Seilerstatte 17, 1010 Viena</option>
+            <option value="Baku">Blv. Hasan Aliev nr. 125 A (district Narimanov)</option>
+            <option value="Minsk">Str. Kaliningradskii pereulok nr. 12, 220012, Minsk</option>
+            <option value="Bruxelles">Rue Gabrielle 105, 1180 Uccle, Bruxelles</option>
+            <option value="Bruxelles">Rue Gabrielle 105, 1180 Uccle, Bruxelles</option>
+            <option value="Bruxelles">Rue Gabrielle 107, 1180 Uccle, Bruxelles</option>
+            <option value="Bruxelles">Rue Gabrielle 107, 1180 Uccle, Bruxelles</option>
+            <option value="Bruxelles">Rue Montoyer 12, 1000 Bruxelles</option>
+            <option value="Bruxelles">Rue Montoyer 12, 1000 Bruxelles</option>
+            <option value="Sarajevo">Cobanija, nr.28, 71000 Sarajevo</option>
+            <option value="Brasilia">SEN Av das Nacoes Lote 6-Asa Norte -DF</option>
+            <option value="Rio de Janeiro">Rua Cosme Velho 526, Bairro Cosme Velho</option>
+            <option value="Sofia">Str.Schipchenski Prohod nr.1</option>
+            <option value="Ottawa">655 Rideau Street, Ottawa, ON, K1N 6A3</option>
+            <option value="Montreal">1010 Sherbrooke Ouest, Montreal, QC, H3A 2R7</option>
+            <option value="Montreal">1010 Sherbrooke Ouest, Montreal, QC, H3A 2R7</option>
+            <option value="Toronto">789 Don Mills Rd., Toronto, ON, M3C 1T9</option>
+            <option value="Toronto">789 Don Mills Rd., Toronto, ON, M3C 1T9</option>
+            <option value="Vancouver">555 Burrard Street, Two Bental Centre, Suite 855, Vancouver, BC, V7X 1M8</option>
+            <option value="Praga">str. Nerudova nr. 5, Praga 1, cod poștal 118 00</option>
+            <option value="Bogota">Carrera 7, Nr 92A-58, Chico, Bogota</option>
+            <option value="Phenian">Munhung-dong</option>
+            <option value="Seoul">50 Jangmun-ro, Yongsan-gu, Seoul, 140-809</option>
+            <option value="Santiago de Chile">Str. Benjamin 2955</option>
+            <option value="Beijing">2, Ritan East Rd., Chaoyang District, Beijing, 100600</option>
+            <option value="Hong Kong">03A Unit, etajul 21, 148 Electric Road, North Point, Hong Kong</option>
+            <option value="Shanghai">502 Room, Honi International Plaza, 199 Chengdu North Road, Jing An District, 200041</option>
+            <option value="Nicosia">Strada Piraeos, nr. 27, cartier Strovolos, cod poștal 2023</option>
+            <option value="Zagreb">Mlinarska 43, 10000 Zagreb</option>
+            <option value="Havana">Avenida 5ta A, nr. 4407, mun. Playa, prov. La Habana</option>
+            <option value="Copenhaga">Strandagervej 27, 2900 Hellerup</option>
+            <option value="Århus">Søren Frichs Vej 39, 8000</option>
+            <option value="Cairo">str. El Kamel Mohammed nr. 6, Zamalek</option>
+            <option value="Berna">Brunnadernstrasse 20, 3006 Bern</option>
+            <option value="Berna">Kirchenfeldstrasse nr.78, 3005 Berna</option>
+            <option value="Geneva">Chemin de la Perriere nr. 6, 1223 Cologny, Geneva</option>
+            <option value="Abu Dhabi">2nd Str., Villa no9, W(14/1) plot no13 at AL RODHA Area, P.O. Box 70416, Abu Dhabi</option>
+            <option value="Dubai">Jumeirah 1, Community 332, Str.12B, Villa no.44, P.O.Box 333765</option>
+            <option value="Tallin">Ravala pst 5, et. 5</option>
+            <option value="Addis Abeba">Bole-03-649 street, B98-11</option>
+            <option value="Manila">Str. Legaspi nr.150, G.C. Corporate Plaza, et. 6, Legaspi Village, Makati City, CP 1229</option>
+            <option value="Helsinki">Stenbackinkatu 24, 00250, Helsinki</option>
+            <option value="Paris">123, Rue Saint-Dominique</option>
+            <option value="Paris">123, Rue Saint-Dominique</option>
+            <option value="Paris">1, Rue de l Exposition</option>
+            <option value="Paris">3, Rue de l Exposition</option>
+            <option value="Lyon">29, Rue de Bonnel</option>
+            <option value="Marsilia">157 Boulevard Michelet</option>
+            <option value="Strasbourg">25, rue Trubner, 67000 Strasbourg</option>
+            <option value="Tbilisi">str. Lvovi, nr. 7, cartier Saburtalo</option>
+            <option value="Berlin">Dorotheenstrasse 62-66, 10117</option>
+            <option value="Berlin">Dorotheenstrasse 62-66</option>
+            <option value="Bonn">Legionsweg 14, 53117</option>
+            <option value="Bonn">Legionsweg 14, 53117</option>
+            <option value="Munchen">Richard-Strauss-Strasse 149, 81679 München</option>
+            <option value="Munchen">Richard-Strauss-Strasse 149, 81679 München</option>
+            <option value="Stuttgart">Hauptstätterstrasse 68-70, 70178</option>
+            <option value="Stuttgart">Hauptstätterstrasse 68-70, 70178</option>
+            <option value="Atena">Emmanouel Benaki 7, 15452 Paleo Psychico</option>
+            <option value="Atena">Emmanouel Benaki 7, 15452 Paleo Psychico</option>
+            <option value="Salonic">Santas 16, Panorama, cod postal 55236</option>
+            <option value="Amman">Str. Al Madeenah Al Munawarah nr. 35</option>
+            <option value="New Delhi">Vasant Vihar D6/6</option>
+            <option value="Jakarta">Jl.Teuku Cik Ditiro 42 A, Menteng</option>
+            <option value="Dublin">26 Waterloo Road, Dublin 4</option>
+            <option value="Tel Aviv 1">str. Adam Hacohen, nr. 24</option>
+            <option value="Tel Aviv 2">str. B-dul Shaul Hamelech nr. 8</option>
+            <option value="Roma">Via Nicolò Tartaglia n. 36, 00197 Roma</option>
+            <option value="Roma">Viale Libano n. 40, 00144 Roma</option>
+            <option value="Roma">Viale Libano n. 40, 00144 Roma</option>
+            <option value="Roma">Piazza Jose de San Martin n. 1, 00197 Roma</option>
+            <option value="Roma">Piazza Jose de San Martin n. 1, 00197 Roma</option>
+            <option value="Catania">Via Misterbianco, No.1, Catania (Regiune Sicilia)</option>
+            <option value="Torino">Via Ancona nr. 7, 10152 Torino</option>
+            <option value="Torino">Via Ancona Nr. 7, 10152 Torino</option>
+            <option value="Trieste">Via Udine, nr.11, Trieste 34132 TS</option>
+            <option value="Veneția">Palazzo Correr, Cannaregio 2214, 30121 Venezia (VE)</option>
+            <option value="Milano">Via Gignese 2, 20148 Milano (MI)</option>
+            <option value="Milano">Via Gignese 2, 20148 Milano (MI)</option>
+            <option value="Milano">Via Gignese 2, 20148 Milano (MI)</option>
+            <option value="Bologna">Via Guelfa, nr. 9</option>
+            <option value="Bologna">Via Guelfa, nr. 9</option>
+            <option value="Bagdad">Arassat Al-Hindia Street, Hay Babel Mahalla 929, Zuqaq 31, Nr. 452/A</option>
+            <option value="Erbil">Gulan Street, Ster Tower, 7th Floor, Unit 702</option>
+            <option value="Teheran">Str. Shahid Meshki nr. 89</option>
+            <option value="Tokyo">Minato-ku, Nishi-Azabu 3-16-19, 106-0031</option>
+            <option value="Astana">Str. Saraișâk, nr.28</option>
+            <option value="Nairobi">Eliud Marhu nr.1119</option>
+            <option value="Kuwait City">Kaifan, Block 4, Mina Street, villa 34</option>
+            <option value="Baabda">Pesidential Palace Route, street 68, no 30, sector 3</option>
+            <option value="Vilnius">Str. Vivulskio, nr. 19</option>
+            <option value="Luxemburg">Boulevard de la Petrusse 41, L-2320</option>
+            <option value="Skopje">Rajko Jinzifov nr. 42, Skopje</option>
+            <option value="Kuala Lumpur">114 Jalan Damai off Jalan Ampang, cod 55000</option>
+            <option value="Rabat">Ouezzane nr.10, cartier Hassan, 10020</option>
+            <option value="Ciudad de Mexico">Calle Sofocles, no. 311, Colonia Polanco, Delegacion Miguel Hidalgo, C.P. 11560, Ciudad deMexico</option>
+            <option value="Chișinău">str. București nr. 66/1</option>
+            <option value="Chișinău">str. Grigore Ureche nr. 2</option>
+            <option value="Chișinău">str. Grigore Ureche nr. 2</option>
+            <option value="Chișinău">str. Grigore Ureche nr. 2</option>
+            <option value="Chișinău">str. Vlaicu Pârcălab nr. 39</option>
+            <option value="Bălți">str. Sf. Nicolae nr. 51</option>
+            <option value="Bălți">str. Sf. Nicolae nr. 51</option>
+            <option value="Cahul">str. B.P. Hașdeu nr. 11</option>
+            <option value="Ungheni">str. Mihai Eminescu nr. 35</option>
+            <option value="Podgorita">Ulica Prve Proleterske, br. 5, 81000</option>
+            <option value="Oslo">Oscars Gate 51, 0244 Oslo</option>
+            <option value="Abuja">Nelson Mandela Street, no.76, Plot 498, Asokoro</option>
+            <option value="Haga">Catsheuvel 55, 2517 KA, Haga</option>
+            <option value="Haga">Catsheuvel 55, 2517 KA, Haga</option>
+            <option value="Islamabad">Casa13 Strada 88, sector G-6/3</option>
+            <option value="Ramallah">Commercial Tower Building, etajul 5, Al- Bireh, Ramallah</option>
+            <option value="Lima">Avenida Jorge Basadre, nr. 690, San Isidro</option>
+            <option value="Varșovia">Ul. Fr.Chopina 10, 00-559 Warszawa</option>
+            <option value="Lisabona">Rua de Sao Caetano no 5, Lapa, 1200-828 Lisboa</option>
+            <option value="Lisabona">Rua do Barão no 8-10 1100-072 Lisboa</option>
+            <option value="Doha">Str. 953, nr.102, zona 65, Dafna Area, Doha,P.O.Box 22511</option>
+            <option value="Londra">1 Belgrave Square,SW1X 8PH</option>
+            <option value="Londra">1 Belgrave Square, SW1X 8PH</option>
+            <option value="Londra">344 Kensington High Street, W14 8 NS</option>
+            <option value="Edinburgh">7-9 North St David Street, EH2 1AW</option>
+            <option value="Moscova">Moscova, str. Mosfilmovskaia nr.64</option>
+            <option value="Rostov pe Don">Rostov pe Don, str. Sedmaia Linia, nr. 18/39</option>
+            <option value="Sankt Petersburg">Sankt Petersburg, str. Garohovaia, nr. 4</option>
+            <option value="Dakar">Point E, Rue A x 9A (Rue A Prolongée), Dakar</option>
+            <option value="Belgrad">Uzicka 10, Belgrad, R. Serbia</option>
+            <option value="Vârșeț">Trg Zelene Pijace nr 3A, Varset, R. Serbia</option>
+            <option value="Zajecar">Kumanovska 45, Zaječar, R. Serbia</option>
+            <option value="Priștina">Str. Azem Jashanica nr.25, cartier Arberia, Pristina, Kosovo, R. Serbia</option>
+            <option value="Singapore">1 Claymore Drive # 08-10</option>
+            <option value="Damasc">Cartier Malki, str.Ibrahim Hanano, nr.8</option>
+            <option value="Ljubliana">Smrekarjeva ulica 33a, 1107</option>
+            <option value="Bratislava">Ticha Ulica 45/A, 811 02 Bratislava</option>
+            <option value="Madrid">Avda. Alfonso XIII, nr. 157 28016, Madrid</option>
+            <option value="Madrid">Avda. Alfonso XIII, nr. 157 28016, Madrid</option>
+            <option value="Madrid">Av. de la Albufera, nr. 319 28031, Madrid</option>
+            <option value="Madrid">Av. de la Albufera, nr. 319 28031, Madrid</option>
+            <option value="Madrid">Plaza de la Lealtad, nr. 3 entreplanta dcha. 28014, Madrid</option>
+            <option value="Barcelona">Calle San Juan de la Salle 35 bis, 08022 Barcelona</option>
+            <option value="Barcelona">Calle San Juan de la Salle 35 bis, 08022 Barcelona</option>
+            <option value="Bilbao">Plaza Circular 4, 48001 Bilbao</option>
+            <option value="Bilbao">Plaza Circular 4, 48001 Bilbao</option>
+            <option value="Sevilla">Avenida Manuel Siurot nr.30 41013, Sevilla</option>
+            <option value="Castellon de la Plana 1">Avenida de Valencia nr. 144 (esq. con Rambla de la Viuda), Castellon de la Plana</option>
+            <option value="Castellon de la Plana 2">Avenida de Valencia nr. 144 (esq. con Rambla de la Viuda), Castellon de la Plana</option>
+            <option value="Ciudad Real">Calle Mata, no. 37 13004 Ciudad Real</option>
+            <option value="Zaragoza">Calle Camino de Las Torres 24, 50008 Zaragoza</option>
+            <option value="Zaragoza">Calle Camino de Las Torres 24, 50008 Zaragoza</option>
+            <option value="Almeria">Carretera Huércal de Almería 46, 04009 Almería</option>
+            <option value="Colombo">25/1 Horton Place-Colombo 07</option>
+            <option value="District of Columbia,Washington">1607 23rd Street NW, Washington, DC 20008</option>
+            <option value="California, Los Angeles">11766 Wilshire Blvd., #200, Los Angeles, CA 90025</option>
+            <option value="New York, New York">200 E 38th St., New York, NY 10016</option>
+            <option value="Ilinois, Chicago 1">737 N Michigan Ave, Suite 2300, Chicago, IL 60611</option>
+            <option value="Khartoum">Kafouri Area, Kassala Road 172-173, Khartoum North</option>
+            <option value="Stockholm">Ostermalmsgatan 36, Cod 114 26</option>
+            <option value="Stockholm">Skeppsbron 20, Cod 111 30</option>
+            <option value="Bangkok">3388/41 Sirinrat Office Building, 12th Floor, RAMA IV Road, Khlong Toei District, Bangkok 10110</option>
+            <option value="Tunis">18, Avenue d'Afrique, Menzah 5, Tunis</option>
+            <option value="Tunis">4, Rue Essaheb Ibn Abbad, Cité Jardins, Tunis</option>
+            <option value="Ankara">Bükres Sokak 4, Çankaya, 06680, Ankara</option>
+            <option value="Izmir">1479 Sokak no. 9, 35220, Alsancak, Izmir</option>
+            <option value="Istanbul">Yanarsu sok., Narin Sitesi, nr. 42, Etiler, Beşiktaş, Istanbul</option>
+            <option value="Istanbul">Sıraselviler Cad. 21, Taksim, Beyoğlu, Istanbul</option>
+            <option value="Ashgabat">Str. Myati Kosayew, nr. 122, Ashgabat</option>
+            <option value="Kiev">Mihaila Kotsiubinskogo nr. 8, raion Shevcenko</option>
+            <option value="Cernăuţi">Şkilna nr. 16</option>
+            <option value="Odesa">Bazarnaia nr. 31</option>
+            <option value="Solotvino">Sportivna nr. 112</option>
+            <option value="Budapesta">1146 Budapesta, Thököly út 72.</option>
+            <option value="Budapesta">1146 Budapesta, Thököly út 72.</option>
+            <option value="Budapesta">1146 Budapesta, Izso utca 5.</option>
+            <option value="Szeged">6720 Szeged, Kelemen László utca 5.</option>
+            <option value="Gyula">5700 Gyula, Munkácsy M. utca 12a</option>
+            <option value="Montevideo">Echevarriarza 3452, Montevideo</option>
+            <option value="Tașkent">Str. Zanjirbog (fostă Rejametov) nr. 44 A, Taşkent</option>
+            <option value="Hanoi">5 Le Hong Phong Street, Hanoi</option>
+            <option value="Harare">105, Fourth Street/Cnr. Chinamano</option>
+        </select>
+        <div class="allah" >
+            <h4><strong>Your Polling Locations</strong></h4>
+            <div id="results" style="padding-top: 10px;">
+            </div>
+        </div>
+        <br>
+        <div class="allah">
+            <h4><strong>Why it's important to vote</strong></h4>
+            <p>Voting is YOUR choice. YOU impact the government's decisions, but you're not doing that if you're not voting. YOU need to play a role in choosing our leaders and changing our laws by voting. Vote!</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="newcontainer">
+        <center>
+            <div class="footer">&copy; 2018 Romanian Government</div>
+        </center>
+    </div>
+</body>
+
+</html>
